@@ -6,6 +6,9 @@ import { register } from "../../../common/services/FirebaseConfiguration";
 //import packages
 import { useNavigate } from "react-router";
 
+//import components
+import Navbar from "../../modules/components/Navbar/Navbar";
+
 const Register = () => {
   //variables
   const navigate = useNavigate();
@@ -23,26 +26,35 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
-      <form onSubmit={handleSubmit}>
-        <h1>Create account</h1>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit" disabled={!email || !password}>
-          Sign up
-        </button>
-      </form>
-    </div>
+    <>
+      <Navbar />
+      <div className="register-container">
+        <form onSubmit={handleSubmit} className="register-form">
+          <h1>Create account</h1>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />{" "}
+          <br />
+          <input
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />{" "}
+          <br />
+          <button type="submit" disabled={!email || !password}>
+            Sign up
+          </button>
+        </form>
+        <span>
+          Do you have an account?
+          <button onClick={() => navigate("/login")}>Log in</button>
+        </span>
+      </div>
+    </>
   );
 };
 

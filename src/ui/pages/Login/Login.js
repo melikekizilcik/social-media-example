@@ -8,6 +8,12 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login as loginHandle } from "../../../common/store/reducers/auth";
 
+//import components
+import Navbar from "../../modules/components/Navbar/Navbar";
+
+//import style
+import "./Login.css";
+
 const Login = () => {
   //variables
   const dispatch = useDispatch();
@@ -28,26 +34,35 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <h3>Login to your account</h3>
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit" disabled={!email || !password}>
-          Log in
-        </button>
-      </form>
-    </div>
+    <>
+      <Navbar />
+      <div className="login-container">
+        <h3>Login to your account</h3>
+        <form onSubmit={handleLogin} className="login-form">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />{" "}
+          <br />
+          <input
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />{" "}
+          <br />
+          <button type="submit" disabled={!email || !password}>
+            Log in
+          </button>
+        </form>
+        <span>
+          Don't you have an account?{" "}
+          <button onClick={() => navigate("/register")}>Create account</button>
+        </span>
+      </div>
+    </>
   );
 };
 

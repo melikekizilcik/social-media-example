@@ -9,8 +9,11 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <NavLink path="/">Home</NavLink>
-      <NavLink path="/profile">Profile</NavLink>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/profile">Profile</NavLink>
+      <NavLink to="/register">Register</NavLink>
+      <NavLink to="/login">Login</NavLink>
+      <NavLink to="/settings">Settings</NavLink>
     </nav>
   );
 };

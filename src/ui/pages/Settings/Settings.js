@@ -11,6 +11,9 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../../common/store/reducers/auth";
 
+//import components
+import Navbar from "../../modules/components/Navbar/Navbar";
+
 const Settings = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -43,34 +46,37 @@ const Settings = () => {
     }
   };
   return (
-    <div>
-      <h3>Update your profile</h3>
-      {user.photoURL && <img src={user.photoURL} alt="" />}
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="Update name"
-          value={displayName}
-          onChange={(e) => setDisplayName(e.target.value)}
-        />
-        <input
-          value={avatar}
-          placeholder="Change profile photo"
-          onChange={(e) => setAvatar(e.target.value)}
-        />
-        <button type="Submit">Update</button>
-      </form>
-      <form onSubmit={handleResetSubmit}>
-        <input
-          type="password"
-          value={password}
-          placeholder="Change password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button disabled={!password} type="submit">
-          Update password
-        </button>
-      </form>
-    </div>
+    <>
+      <Navbar />
+      <div>
+        <h3>Update your profile</h3>
+        {user.photoURL && <img src={user.photoURL} alt="" />}
+        <form onSubmit={handleSubmit}>
+          <input
+            placeholder="Update name"
+            value={displayName}
+            onChange={(e) => setDisplayName(e.target.value)}
+          />
+          <input
+            value={avatar}
+            placeholder="Change profile photo"
+            onChange={(e) => setAvatar(e.target.value)}
+          />
+          <button type="Submit">Update</button>
+        </form>
+        <form onSubmit={handleResetSubmit}>
+          <input
+            type="password"
+            value={password}
+            placeholder="Change password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button disabled={!password} type="submit">
+            Update password
+          </button>
+        </form>
+      </div>
+    </>
   );
 };
 

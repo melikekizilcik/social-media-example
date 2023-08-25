@@ -1,4 +1,8 @@
 .navbar{
-    background-color: red;
-    
+    background-color: #e8e8e8;
+}
+
+.navbar a{
+    margin-right:30px;
+    text-decoration: none;
 }
