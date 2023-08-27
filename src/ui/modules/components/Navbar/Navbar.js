@@ -44,7 +44,7 @@ const Navbar = () => {
         </div>
       </NavLink>
       <br />
-      <button className="share-button">Share something</button>
+      <button className="share-button">Share</button>
     </nav>
   );
 };

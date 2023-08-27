@@ -3,5 +3,10 @@
     align-items: center;
     gap: 20px;
     justify-content: center;
-    color:  white;
+}
+
+.website-title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+   
 }

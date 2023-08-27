@@ -1,0 +1,13 @@
+.search-input{
+    padding: 8px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #ebf6fc;;
+    width: 30%;
+}
+
+.search-input::placeholder{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    opacity: 0.3;
+}

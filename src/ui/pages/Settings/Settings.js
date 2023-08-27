@@ -14,6 +14,9 @@ import { login } from "../../../common/store/reducers/auth";
 //import components
 import Navbar from "../../modules/components/Navbar/Navbar";
 
+//import style
+import "./Settings.css";
+
 const Settings = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -46,7 +49,7 @@ const Settings = () => {
     }
   };
   return (
-    <>
+    <div className="settings-page">
       <Navbar />
       <div>
         <h3>Update your profile</h3>
@@ -76,7 +79,7 @@ const Settings = () => {
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

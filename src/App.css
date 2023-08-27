@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .App{
   width: 100vw;
   height: 100vh;
@@ -5,9 +7,11 @@
 }
 
 body{
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  background: rgb(2,63,77);
-  background: linear-gradient(90deg, rgba(2,63,77,1) 42%, rgba(19,119,111,1) 100%);
-  color: white;
+  background: #F7F9FA;
+  color: rgb(37, 65, 105);
+  /*background: linear-gradient(90deg, rgba(2,63,77,1) 42%, rgba(19,119,111,1) 100%); 
+  color: white; */
 }

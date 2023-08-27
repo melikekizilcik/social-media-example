@@ -9,7 +9,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <div className="header-container">
-      <p>TwitGram.</p>
+      <p className="website-title">TwitGram.</p>
       <Search />
       <p>Profile</p>
       <p>Settings</p>

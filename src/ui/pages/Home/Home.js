@@ -53,7 +53,6 @@ const Home = () => {
       <div className="home-content-container">
         <Navbar />
         <div>
-          <h1>Homepage</h1>
           <div>
             <h3>Share something!</h3>
             <form onSubmit={sendPost}>
