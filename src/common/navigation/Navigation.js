@@ -9,6 +9,7 @@ import Register from "../../ui/pages/Register/Register";
 import Home from "../../ui/pages/Home/Home";
 import Profile from "../../ui/pages/Profile/Profile";
 import Settings from "../../ui/pages/Settings/Settings";
+import AfterRegister from "../../ui/pages/AfterRegister/AfterRegister";
 
 const Navigation = () => {
   return (
@@ -18,6 +19,7 @@ const Navigation = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/settings" element={<Settings />} />
+      <Route path="/get-information" element={<AfterRegister />} />
     </Routes>
   );
 };

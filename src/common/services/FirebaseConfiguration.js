@@ -1,4 +1,9 @@
 import { initializeApp } from "firebase/app";
+
+//firestore db
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+
+//firebase authentication
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -13,6 +18,8 @@ import {
   login as loginHandle,
   logout as logoutHandle,
 } from "../store/reducers/auth";
+
+//import packages
 import toast from "react-hot-toast";
 import store from "../store/store";
 
@@ -28,6 +35,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const db = getFirestore(app);
 
 //auth actions
 //register
@@ -111,3 +119,9 @@ onAuthStateChanged(auth, (user) => {
     store.dispatch(logoutHandle(user));
   }
 });
+
+//add user
+export const addUser = async (data) => {
+  const result = await addDoc(collection(db, "users"), data);
+  console.log(result);
+};

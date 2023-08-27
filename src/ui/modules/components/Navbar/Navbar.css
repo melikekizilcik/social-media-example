@@ -1,8 +1,27 @@
 .navbar{
-    background-color: #e8e8e8;
+  max-width: fit-content;
+  /*width: 25%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); */
 }
 
 .navbar a{
+    color: white;
     margin-right:30px;
     text-decoration: none;
+    font-size: 20px;
+}
+
+.pages{
+    margin-left: 60px; 
+}
+
+.icon{
+    margin-right: 20px;
+}
+
+.share-button{
+    margin-left: 60px; 
 }
