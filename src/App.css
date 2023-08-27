@@ -9,4 +9,5 @@ body{
   padding: 0;
   background: rgb(2,63,77);
   background: linear-gradient(90deg, rgba(2,63,77,1) 42%, rgba(19,119,111,1) 100%);
+  color: white;
 }

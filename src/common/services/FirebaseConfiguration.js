@@ -125,3 +125,9 @@ export const addUser = async (data) => {
   const result = await addDoc(collection(db, "users"), data);
   console.log(result);
 };
+
+//add post
+export const addPost = async (data) => {
+  const result = await addDoc(collection(db, "posts"), data);
+  console.log(result);
+};
