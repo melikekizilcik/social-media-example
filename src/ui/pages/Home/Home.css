@@ -1,4 +1,61 @@
 .home-content-container{
     display: flex;
     gap: 50px;
+    margin-top: 50px;
+    /* text-align: center; */
+    width: 70%;
+
+}
+
+.home-title{
+    text-align: center;
+}
+
+.log-out-button{
+    margin: 20px;
+    background-color: rgb(67, 95, 134);
+    color: white;
+    padding: 10px;
+    width: 100px;
+    border-style: none;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+.post-form{
+    text-align: center;
+   
+}
+
+.post-form > textarea{
+    width: 500px;
+    height: 100px;
+    font-family: 'Montserrat', sans-serif;;
+    padding: 15px;
+    background-color: #ebf6fc;
+    border-style: none;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.post-form > input{
+    font-family: 'Montserrat', sans-serif;;
+    padding: 15px;
+    width: 500px;
+    background-color: #ebf6fc;
+    border-style: none;
+    border-radius: 20px;
+}
+
+.post-form > button{
+    margin: 20px;
+    background-color: rgb(67, 95, 134);
+    color: white;
+    padding: 10px;
+    width: 100px;
+    border-style: none;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
 }

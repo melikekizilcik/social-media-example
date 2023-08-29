@@ -17,6 +17,7 @@ import Navbar from "../../modules/components/Navbar/Navbar";
 
 //import style
 import "./Profile.css";
+import Header from "../../modules/components/Header/Header";
 
 const Profile = () => {
   //variables
@@ -37,16 +38,29 @@ const Profile = () => {
 
   return (
     <>
-      <Navbar />
-      <div>
-        <img className="profile-picture" src={user?.photoURL} alt="" />
-        <h2>{user?.displayName}</h2>
-        <button onClick={handleVerification}>Verify email</button>
-        <span>
-          Update your profile:{" "}
-          <button onClick={() => navigate("/settings")}>Settings</button>
-        </span>
-        <button onClick={handleLogout}>Log out</button>
+      <Header />
+      <div className="profile-page-container">
+        <Navbar />
+        <div>
+          <img className="profile-picture" src={user?.photoURL} alt="" />
+          <h3>{user.name}</h3>
+          <h2>{user?.displayName}</h2>
+          <button onClick={handleVerification} className="submit-button">
+            Verify email
+          </button>
+          <span>
+            Update your profile:{" "}
+            <button
+              onClick={() => navigate("/settings")}
+              className="submit-button"
+            >
+              Settings
+            </button>
+          </span>
+          <button onClick={handleLogout} className="submit-button">
+            Log out
+          </button>
+        </div>
       </div>
     </>
   );

@@ -1,0 +1,24 @@
+.register-page{
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.register-container{
+    text-align: center;
+    width: 70%;
+}
+
+.register-form{
+    margin-bottom: 20px;
+}
+
+.register-form > input{
+    margin: 10px;
+    border-radius: 10px;
+    padding: 13px;
+    border-style: none;
+    width: 250px;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.7;
+}

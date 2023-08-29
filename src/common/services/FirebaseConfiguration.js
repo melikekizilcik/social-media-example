@@ -1,7 +1,14 @@
 import { initializeApp } from "firebase/app";
 
 //firestore db
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  onSnapshot,
+  doc,
+} from "firebase/firestore";
 
 //firebase authentication
 import {
@@ -22,6 +29,7 @@ import {
 //import packages
 import toast from "react-hot-toast";
 import store from "../store/store";
+import { setPosts } from "../store/reducers/posts";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCBqFeByTvzAXZihSuNWGjuVXgxupc3Xq8",
@@ -122,8 +130,13 @@ onAuthStateChanged(auth, (user) => {
 
 //add user
 export const addUser = async (data) => {
-  const result = await addDoc(collection(db, "users"), data);
-  console.log(result);
+  try {
+    const result = await addDoc(collection(db, "users"), data);
+    console.log(result);
+    toast.success("Succesfull!");
+  } catch (error) {
+    toast.error(error.message);
+  }
 };
 
 //add post
@@ -131,3 +144,12 @@ export const addPost = async (data) => {
   const result = await addDoc(collection(db, "posts"), data);
   console.log(result);
 };
+
+//get posts
+onSnapshot(collection(db, "posts"), (doc) => {
+  store.dispatch(
+    setPosts(doc.docs.reduce((posts, post) => [...posts, post.data()], []))
+  );
+});
+
+//get user

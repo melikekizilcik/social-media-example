@@ -22,6 +22,7 @@ const Home = () => {
   //variables
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
+  const { posts } = useSelector((state) => state.posts);
 
   //useState
   const [post, setPost] = useState("");
@@ -54,24 +55,35 @@ const Home = () => {
         <Navbar />
         <div>
           <div>
-            <h3>Share something!</h3>
-            <form onSubmit={sendPost}>
+            <h3 className="home-title">Share something!</h3>
+            <form onSubmit={sendPost} className="post-form">
               <textarea
                 type="text"
                 placeholder="Write here"
                 value={post}
                 onChange={(e) => setPost(e.target.value)}
               />
+              <br />
               <input
                 type="text"
                 placeholder="Add category to reach more people"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               />
+              <br />
               <button type="submit">Share</button>
             </form>
           </div>
-          <button onClick={handleLogout}>Log out</button>
+          <div>
+            {posts.map((post, index) => (
+              <div key={index}>
+                <p>{post.post}</p>
+              </div>
+            ))}
+          </div>
+          <button className="log-out-button" onClick={handleLogout}>
+            Log out
+          </button>
         </div>
       </div>
     </>

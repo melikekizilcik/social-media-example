@@ -1,3 +1,17 @@
-.information-form{
-  
+.page-container{
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+    width: 70%;
+}
+
+
+.information-form > input{
+    margin: 10px;
+    border-radius: 10px;
+    padding: 13px;
+    border-style: none;
+    width: 250px;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.7;
 }
