@@ -1,0 +1,31 @@
+.custom-btn {
+	padding: 10px 20px;
+	border-radius: 3px;
+	border: none;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.custom-btn.fill {
+	border-radius: 20px;
+}
+
+.custom-btn.outline {
+	background: transparent !important;
+}
+
+.custom-btn.outline.primary {
+	border: 1px solid blue;
+	color: blue;
+}
+
+.custom-btn.primary {
+	background-color: blue;
+	color: white;
+}
+
+.custom-btn.danger {
+	background-color: red;
+	color: white;
+}
