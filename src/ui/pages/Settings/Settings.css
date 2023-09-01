@@ -5,3 +5,27 @@
     /* text-align: center; */
     width: 70%;
 }
+
+.user-photo{
+    max-width: 200px;
+}
+
+.update-user> input {
+	margin: 10px;
+	border-radius: 10px;
+	padding: 13px;
+	border-style: none;
+	width: 250px;
+	font-family: "Montserrat", sans-serif;
+	opacity: 0.7;
+}
+
+.update-password > input{
+	margin: 10px;
+	border-radius: 10px;
+	padding: 13px;
+	border-style: none;
+	width: 250px;
+	font-family: "Montserrat", sans-serif;
+	opacity: 0.7;
+}

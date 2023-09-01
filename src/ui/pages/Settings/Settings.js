@@ -56,8 +56,10 @@ const Settings = () => {
         <Navbar />
         <div>
           <h3>Update your profile</h3>
-          {user.photoURL && <img src={user.photoURL} alt="" />}
-          <form onSubmit={handleSubmit}>
+          {user.photoURL && (
+            <img className="user-photo" src={user.photoURL} alt="" />
+          )}
+          <form onSubmit={handleSubmit} className="update-user">
             <input
               placeholder="Update name"
               value={displayName}
@@ -70,7 +72,7 @@ const Settings = () => {
             />
             <button type="Submit">Update</button>
           </form>
-          <form onSubmit={handleResetSubmit}>
+          <form onSubmit={handleResetSubmit} className="update-password">
             <input
               type="password"
               value={password}

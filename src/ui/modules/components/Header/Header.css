@@ -10,3 +10,21 @@
     font-weight: bold;
    
 }
+
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.profile-picture{
+    max-height: 30px;
+    max-width: 30px;
+    border-radius: 80px;
+    
+}
+
+.header-container > p{
+cursor: pointer;
+}
