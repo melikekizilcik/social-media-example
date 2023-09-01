@@ -16,6 +16,7 @@ import Navbar from "../../modules/components/Navbar/Navbar";
 
 //import style
 import "./Settings.css";
+import Header from "../../modules/components/Header/Header";
 
 const Settings = () => {
   const dispatch = useDispatch();
@@ -49,37 +50,40 @@ const Settings = () => {
     }
   };
   return (
-    <div className="settings-page">
-      <Navbar />
-      <div>
-        <h3>Update your profile</h3>
-        {user.photoURL && <img src={user.photoURL} alt="" />}
-        <form onSubmit={handleSubmit}>
-          <input
-            placeholder="Update name"
-            value={displayName}
-            onChange={(e) => setDisplayName(e.target.value)}
-          />
-          <input
-            value={avatar}
-            placeholder="Change profile photo"
-            onChange={(e) => setAvatar(e.target.value)}
-          />
-          <button type="Submit">Update</button>
-        </form>
-        <form onSubmit={handleResetSubmit}>
-          <input
-            type="password"
-            value={password}
-            placeholder="Change password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button disabled={!password} type="submit">
-            Update password
-          </button>
-        </form>
+    <>
+      <Header />
+      <div className="settings-page">
+        <Navbar />
+        <div>
+          <h3>Update your profile</h3>
+          {user.photoURL && <img src={user.photoURL} alt="" />}
+          <form onSubmit={handleSubmit}>
+            <input
+              placeholder="Update name"
+              value={displayName}
+              onChange={(e) => setDisplayName(e.target.value)}
+            />
+            <input
+              value={avatar}
+              placeholder="Change profile photo"
+              onChange={(e) => setAvatar(e.target.value)}
+            />
+            <button type="Submit">Update</button>
+          </form>
+          <form onSubmit={handleResetSubmit}>
+            <input
+              type="password"
+              value={password}
+              placeholder="Change password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button disabled={!password} type="submit">
+              Update password
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
