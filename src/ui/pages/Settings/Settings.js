@@ -70,7 +70,9 @@ const Settings = () => {
               placeholder="Change profile photo"
               onChange={(e) => setAvatar(e.target.value)}
             />
-            <button type="Submit">Update</button>
+            <button type="Submit" className="submit-button">
+              Update
+            </button>
           </form>
           <form onSubmit={handleResetSubmit} className="update-password">
             <input
@@ -79,8 +81,12 @@ const Settings = () => {
               placeholder="Change password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button disabled={!password} type="submit">
-              Update password
+            <button
+              disabled={!password}
+              type="submit"
+              className="submit-button"
+            >
+              Update
             </button>
           </form>
         </div>
